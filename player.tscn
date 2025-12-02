@@ -32,7 +32,7 @@ region = Rect2(200, 0, 100, 200)
 [sub_resource type="SpriteFrames" id="SpriteFrames_tvpqx"]
 animations = [{
 "frames": [{
-"duration": 0.5,
+"duration": 0.1,
 "texture": SubResource("AtlasTexture_c0dob")
 }, {
 "duration": 0.5,
@@ -43,6 +43,9 @@ animations = [{
 }, {
 "duration": 0.5,
 "texture": SubResource("AtlasTexture_6sogb")
+}, {
+"duration": 0.5,
+"texture": SubResource("AtlasTexture_c0dob")
 }],
 "loop": true,
 "name": &"backward",
@@ -78,7 +81,7 @@ animations = [{
 "duration": 0.5,
 "texture": SubResource("AtlasTexture_fpp5w")
 }, {
-"duration": 0.5,
+"duration": 0.1,
 "texture": SubResource("AtlasTexture_c0dob")
 }],
 "loop": true,
@@ -108,12 +111,6 @@ metadata/_edit_group_ = true
 position = Vector2(1, -1)
 sprite_frames = SubResource("SpriteFrames_tvpqx")
 animation = &"backward"
-metadata/_edit_group_ = true
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="AnimatedSprite2D"]
-position = Vector2(1, -1)
-sprite_frames = SubResource("SpriteFrames_tvpqx")
-animation = &"forward"
 metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
