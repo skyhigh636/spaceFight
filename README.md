@@ -1,0 +1,13 @@
+
+# DONE
+GRAVITY
+MOVEMENT
+IDLE/WALK ANIMATIONS
+STATE MACHINE IMPLEMENTATION
+
+# TO DO
+HIT REGISTRATION
+ATTACK ANIMATIONS (Implementations, sprites already there)
+EFFECTS 
+UI
+(spriters resource will come in clutch)
