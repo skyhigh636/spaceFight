@@ -23,4 +23,4 @@ func get_move_dir() -> float:
 	
 
 func do_move(move_dir: float) -> void:
-	player.velocity.x = move_dir * SPEED
+	player.velocity.x = move_toward(player.velocity.x, move_dir * SPEED, SPEED  * 0.15)
