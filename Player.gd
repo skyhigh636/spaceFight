@@ -36,10 +36,13 @@ func _physics_process(delta):
 	move_and_slide()
 """
 
-@onready var state_machine: StateMachine = $"State machine"
-@onready var animation: AnimationPlayer = $"Animation"
+var state_machine: StateMachine 
+var animation: AnimationPlayer
 
-func _init(): state_machine.init()
+func _ready(): 
+	state_machine = $"State machine"
+	animation = $"Animation"
+	state_machine.init()
 
 
 func _process(delta): state_machine.process_frame(delta)

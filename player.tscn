@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://boidsjeh3033j"]
+[gd_scene load_steps=21 format=3 uid="uid://boidsjeh3033j"]
 
 [ext_resource type="Script" uid="uid://cv7stftclukn4" path="res://Player.gd" id="1_hqtel"]
 [ext_resource type="Texture2D" uid="uid://b1ygx7x6j5pgy" path="res://Sol/solIdle001.png" id="2_sweqy"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://qs3ohxunli6e" path="res://Sol/sol.png" id="4_1jxqw"]
 [ext_resource type="Script" uid="uid://3n55cthpsuyx" path="res://state_machine.gd" id="5_sweqy"]
 [ext_resource type="Script" uid="uid://doxqwemn0n0xv" path="res://PlayerIdle.gd" id="6_2hs0m"]
+[ext_resource type="Script" uid="uid://bex7eaa6ry700" path="res://walk.gd" id="7_1jxqw"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_c0dob"]
 atlas = ExtResource("4_1jxqw")
@@ -111,6 +112,8 @@ size = Vector2(92, 191)
 
 [sub_resource type="Animation" id="Animation_sweqy"]
 resource_name = "Idle"
+length = 10.0
+loop_mode = 1
 step = 0.2
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -131,10 +134,10 @@ tracks/1/path = NodePath("Sprite:frame")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.806783, 0.998545),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.806783, 0.998545, 1.19, 1.39, 1.59, 1.79, 1.99678, 2.18854, 2.38, 2.58, 2.78, 2.98, 3.18678, 3.37855, 3.56564, 3.76564, 3.96564, 4.16564, 4.37242, 4.56418, 4.69651, 4.89651, 5.09651, 5.29651, 5.50329, 5.69506),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
 "update": 1,
-"values": [0, 0, 1, 2, 3, 0]
+"values": [0, 0, 1, 2, 3, 0, 0, 0, 1, 2, 3, 0, 0, 0, 1, 2, 3, 0, 0, 0, 1, 2, 3, 0, 0, 0, 1, 2, 3, 0]
 }
 
 [sub_resource type="Animation" id="Animation_2hs0m"]
@@ -164,10 +167,39 @@ tracks/1/keys = {
 "values": [0]
 }
 
+[sub_resource type="Animation" id="Animation_dw050"]
+resource_name = "Walk"
+step = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"forward"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_1jxqw"]
 _data = {
 &"Idle": SubResource("Animation_sweqy"),
-&"RESET": SubResource("Animation_2hs0m")
+&"RESET": SubResource("Animation_2hs0m"),
+&"Walk": SubResource("Animation_dw050")
 }
 
 [node name="Player" type="CharacterBody2D" groups=["Player"]]
@@ -191,8 +223,11 @@ libraries = {
 &"": SubResource("AnimationLibrary_1jxqw")
 }
 
-[node name="State machine" type="Node2D" parent="."]
+[node name="State machine" type="Node2D" parent="." groups=["States"]]
 script = ExtResource("5_sweqy")
 
 [node name="Idle" type="Node2D" parent="State machine"]
 script = ExtResource("6_2hs0m")
+
+[node name="Walk" type="Node2D" parent="State machine"]
+script = ExtResource("7_1jxqw")
