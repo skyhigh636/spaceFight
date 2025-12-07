@@ -3,12 +3,12 @@
 - MOVEMENT
 - IDLE/WALK ANIMATIONS
 - STATE MACHINE IMPLEMENTATION
+- HIT REG
 
+- 
 # TO DO
-- HIT REGISTRATION
 - ATTACK ANIMATIONS  
-  *(implementations needed; sprites already available)*
+  *(Partially done)*
 - EFFECTS
 - UI
-
 *(spriters resource will come in clutch)*
