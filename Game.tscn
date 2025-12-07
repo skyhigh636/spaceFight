@@ -1,23 +1,15 @@
-[gd_scene load_steps=5 format=3 uid="uid://cuboqgxdyo3kj"]
+[gd_scene load_steps=4 format=3 uid="uid://cuboqgxdyo3kj"]
 
 [ext_resource type="PackedScene" uid="uid://cq2cvy7h4bisp" path="res://level.tscn" id="1_xkndl"]
 [ext_resource type="PackedScene" uid="uid://boidsjeh3033j" path="res://player.tscn" id="2_u44n3"]
-[ext_resource type="Script" uid="uid://cdvwbuqen0utd" path="res://hurtbox.gd" id="3_u44n3"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_sb48q"]
-size = Vector2(814, 151)
+[ext_resource type="PackedScene" uid="uid://boj7o38sy1ny2" path="res://Enemy.tscn" id="3_u44n3"]
 
 [node name="Game" type="Node"]
 
 [node name="level" parent="." instance=ExtResource("1_xkndl")]
 
 [node name="player" parent="." instance=ExtResource("2_u44n3")]
-position = Vector2(103, 394)
+position = Vector2(91, 398)
 
-[node name="HurtBox" type="Area2D" parent="."]
-script = ExtResource("3_u44n3")
-metadata/_custom_type_script = "uid://cdvwbuqen0utd"
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="HurtBox"]
-position = Vector2(685, 397)
-shape = SubResource("RectangleShape2D_sb48q")
+[node name="Enemy" parent="." instance=ExtResource("3_u44n3")]
+position = Vector2(931, 390)

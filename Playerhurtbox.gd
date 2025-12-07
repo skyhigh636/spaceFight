@@ -2,8 +2,8 @@ class_name PlayerHurtBox
 extends HurtBox
 
 
-@onready var pain_state: PlayerPainState = $".."
-@onready var state_machine: StateMachine = $"res://state_machine.gd"
+@onready var pain_state: PlayerPainState = $"../Pain"
+@onready var state_machine: StateMachine = $"../.."
 var hit_area: Node2D
 
 func on_area_entered(hit_box: HitBox) -> void:
@@ -11,5 +11,4 @@ func on_area_entered(hit_box: HitBox) -> void:
 	super(hit_box)
 	hit_area = hit_box.owner
 	state_machine.change_state(pain_state)
-	print("Damaged")
 	

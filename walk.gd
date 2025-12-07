@@ -21,7 +21,7 @@ func process_input(event: InputEvent) -> State:
 	if event.is_action_pressed(jump_key) and player.is_on_floor():
 		return jump_state
 		#come back to later
-		##elif event.is_action_pressed(up_key) and player.is_on_floor() and event.is_action_pressed(jab_key): return upper_state
+		## elif event.is_action_pressed(up_key) and player.is_on_floor() and event.is_action_pressed(jab_key): return upper_state
 
 	elif event.is_action_pressed(jab_key) and player.is_on_floor(): return straight_state
 	return null
@@ -33,3 +33,7 @@ func get_move_dir() -> float:
 
 func do_move(move_dir: float) -> void:
 	player.velocity.x = move_toward(player.velocity.x, move_dir * SPEED, SPEED  * 0.15)
+	if move_dir < 0:
+		player.sprite.flip_h = true
+	elif move_dir > 0:
+		player.sprite.flip_h = false

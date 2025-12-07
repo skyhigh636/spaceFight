@@ -4,10 +4,13 @@ extends CharacterBody2D
 
 var state_machine: StateMachine 
 var animation: AnimationPlayer
+var sprite: AnimatedSprite2D
 
 func _ready(): 
 	state_machine = $"State machine"
 	animation = $"Animation"
+	sprite = $"Sprite"
+
 	state_machine.init()
 
 
