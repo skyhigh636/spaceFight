@@ -4,11 +4,8 @@
 - IDLE/WALK ANIMATIONS
 - STATE MACHINE IMPLEMENTATION
 - HIT REG
-
-- 
+- ATTACK ANIMATIONS (to a degree)
 # TO DO
-- ATTACK ANIMATIONS  
-  *(Partially done)*
-- EFFECTS
-- UI
-*(spriters resource will come in clutch)*
+- EFFECTS (no)
+- UI (no)
+- BACKGROUND
