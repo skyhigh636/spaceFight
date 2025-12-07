@@ -4,7 +4,11 @@ extends State
 @onready var player: Player = get_tree().get_first_node_in_group("Player")
 var gravity: float = ProjectSettings.get_setting("physics/2d/default_gravity",-9.8)
 
-
+"""
+'why wont this button work??'
+the humble missing condition in Playerstate.gd:
+	THE CENTRE OF EVERY NEW ACTION AND STATE
+"""
 #Animations
 var idle_anim: String = "Idle"
 var walk_anim: String = "Walk"
@@ -36,6 +40,7 @@ var jab_key: String = "Jab"
 
 
 
+## else ifs of doom:
 func _ready():
 	if idle_state == null or walk_state == null or jump_state == null:
 		var state_machine = get_parent()
@@ -55,7 +60,7 @@ func _ready():
 #				elif child is PlayerUpperState and upper_state == null: 
 #					upper_state = child
 
-#base 
+#the gravity
 func process_physics(delta: float) -> State:
 	player.velocity.y += gravity * delta
 	player.move_and_slide()

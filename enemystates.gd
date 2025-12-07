@@ -1,6 +1,6 @@
 class_name EnemyState
 extends State
-
+## SEE PLAYER EQUIVALENT FOR FULL EXPLAINATION
 var enemy: Enemy = null
 var gravity: float = ProjectSettings.get_setting("physics/2d/default_gravity",-9.8)
 

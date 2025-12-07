@@ -6,6 +6,7 @@ extends HurtBox
 @onready var state_machine: StateMachine = $"../.."
 var hit_area: Node2D
 
+## collisions, blah blah 
 func on_area_entered(hit_box: HitBox) -> void:
 	if hit_box == null: return
 	super(hit_box)

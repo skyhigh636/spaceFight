@@ -1,5 +1,6 @@
 class_name PlayerPainState
 extends PlayerState
+
 """
 Whole script doesnt work, fuck it get bodied.
 """

@@ -3,7 +3,9 @@ extends PlayerState
 
 var STOP: float = 0
 var attacked: bool
-
+"""
+all attacks have this same structure, slightly differing if based around directional inputs
+"""
 @onready var hitbox: Area2D = $HitBox
 @onready var hitbox_collision: CollisionShape2D = $HitBox/CollisionShape2D
 var original_hitbox_position: Vector2

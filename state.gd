@@ -10,7 +10,7 @@ func enter() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func exit() -> void:
 	pass
-
+# state class
 
 func process_frame(delta: float) -> State:
 	return null

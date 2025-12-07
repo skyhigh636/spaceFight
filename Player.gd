@@ -6,6 +6,7 @@ var state_machine: StateMachine
 var animation: AnimationPlayer
 var sprite: AnimatedSprite2D
 
+## create the player object and start sending to different states depending on actions(same with enemy object)
 func _ready(): 
 	state_machine = $"State machine"
 	animation = $"Animation"

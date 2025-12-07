@@ -1,5 +1,11 @@
 class_name StateMachine
+"""
+who knew state machines were actually applicable in code..
 
+State machine initialization
+this file handles all the transitions to differing states,
+the train depot that sends the trains.
+"""
 extends Node2D
 
 var current_state: State

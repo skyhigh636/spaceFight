@@ -1,6 +1,8 @@
 class_name PlayerWalkState
 extends PlayerState
-
+"""
+movement, nothing of note
+"""
 const SPEED: float = 350.0
 func enter() -> void:
 	player.animation.play(walk_anim)

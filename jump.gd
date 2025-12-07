@@ -4,7 +4,10 @@ extends PlayerState
 const SPEED: float = 1500.0
 const AIR_SPEED: float = 550.0
 const JUMP_FORCE: float = -550.0 
-
+"""
+jumping, similar enough to walk script just including the y axis
+can get mad wacky if vars are changed
+"""
 func enter() -> void: 
 	super()
 	player.velocity.y = JUMP_FORCE

@@ -2,7 +2,11 @@ class_name PlayerIdleState
 extends PlayerState
 
 var DECEL_SPEED : float = 300.0
-
+"""
+Idle state for idle animation,
+only thing here is the input function being useful for actions that should only happen
+when standing still
+"""
 func enter() -> void:
 	player.animation.play(idle_anim)
 
