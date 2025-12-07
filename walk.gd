@@ -20,10 +20,10 @@ func process_input(event: InputEvent) -> State:
 	super(event)
 	if event.is_action_pressed(jump_key) and player.is_on_floor():
 		return jump_state
-	elif event.is_action_pressed(jab_key) and player.is_on_floor() and event.is_action_pressed("Right"): return straight_state
+		#come back to later
+		##elif event.is_action_pressed(up_key) and player.is_on_floor() and event.is_action_pressed(jab_key): return upper_state
 
-	elif event.is_action_pressed(jab_key) and player.is_on_floor(): return jab_state
-
+	elif event.is_action_pressed(jab_key) and player.is_on_floor(): return straight_state
 	return null
 	
 func get_move_dir() -> float:

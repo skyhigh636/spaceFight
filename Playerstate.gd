@@ -11,7 +11,8 @@ var walk_anim: String = "Walk"
 var jump_anim: String = "Jumo"
 var jab_anim: String = "Jab"
 var straight_anim: String = "Straight"
-
+var upper_anim: String = "Upper"
+var pain_anim: String = "pain"
 
 #STATES
 @export_group("States")
@@ -21,7 +22,8 @@ var straight_anim: String = "Straight"
 @export var fall_state: PlayerState
 @export var jab_state: PlayerState
 @export var straight_state: PlayerState
-
+@export var upper_state: PlayerState
+@export var pain_state: PlayerState
 
 #inputs
 var movement_key: String = "Movement"
@@ -49,6 +51,9 @@ func _ready():
 					jab_state = child
 				elif child is PlayerStraightState and straight_state == null:
 					straight_state = child
+					## Come back to later
+#				elif child is PlayerUpperState and upper_state == null: 
+#					upper_state = child
 
 #base 
 func process_physics(delta: float) -> State:
