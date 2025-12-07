@@ -1,7 +1,7 @@
 class_name PlayerWalkState
 extends PlayerState
 
-const SPEED: float = 150.0
+const SPEED: float = 350.0
 func enter() -> void:
 	player.animation.play(walk_anim)
 	
@@ -16,7 +16,12 @@ func process_physics(delta: float) -> State:
 	return null
 	
 	
-
+func process_input(event: InputEvent) -> State:
+	super(event)
+	if event.is_action_pressed(jump_key) and player.is_on_floor():
+		return jump_state
+	return null
+	
 func get_move_dir() -> float:
 
 	return Input.get_axis(left_key,right_key)
