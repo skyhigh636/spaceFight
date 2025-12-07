@@ -13,6 +13,7 @@ func process_physics(delta: float) -> State:
 
 func process_input(event: InputEvent) -> State:
 	super(event)
-	if event.is_action_pressed(movement_key): return walk_state
+	if event.is_action_pressed(right_key) or event.is_action_pressed(left_key): return walk_state
 	if event.is_action_pressed(jump_key) and player.is_on_floor(): return jump_state
+	elif event.is_action_pressed(jab_key) and player.is_on_floor(): return jab_state
 	return null

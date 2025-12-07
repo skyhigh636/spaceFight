@@ -10,6 +10,7 @@ var idle_anim: String = "Idle"
 var walk_anim: String = "Walk"
 var jump_anim: String = "Jumo"
 var jab_anim: String = "Jab"
+var straight_anim: String = "Straight"
 
 
 #STATES
@@ -19,6 +20,7 @@ var jab_anim: String = "Jab"
 @export var jump_state: PlayerState
 @export var fall_state: PlayerState
 @export var jab_state: PlayerState
+@export var straight_state: PlayerState
 
 
 #inputs
@@ -28,7 +30,8 @@ var right_key: String = "Right"
 var up_key: String = "Up"
 var down_key: String = "Down"
 var jump_key: String = "Jump"
-var jab_key: String = "attack"
+var jab_key: String = "Jab"
+
 
 
 func _ready():
@@ -40,10 +43,12 @@ func _ready():
 					idle_state = child
 				elif child is PlayerWalkState and walk_state == null:
 					walk_state = child
-					
 				elif child is PlayerJumpState and jump_state == null:
 					jump_state = child
-
+				elif child is PlayerJabState and jab_state == null:
+					jab_state = child
+				elif child is PlayerStraightState and straight_state == null:
+					straight_state = child
 
 #base 
 func process_physics(delta: float) -> State:
